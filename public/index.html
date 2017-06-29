@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="UrlApp">
+<head>
+<title>My Angular App</title>
+<link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="./font-awesome.css" />
+<link rel="stylesheet" type="text/css" href="./app.css" />
+
+</head>
+<body>
+
+<header>
+
+
+  <nav class="navigation" ng-controller="SearchCtrl as search">
+    <a href="/#" class="fa fa-home"></a>
+    <input type="text" placeholder="Search..." ng-model="search.q" />
+    <a href="/#/new" class="fa fa-plus"></a>
+  </nav>
+</header>
+<div ng-controller="AppCtrl as vm">
+<div ng-view></div>
+    {{vm.data | json}}
+</div>
+
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="bower_components/underscore/underscore.js"></script>
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+<script type="text/javascript" src="bower_components/angular-animate/angular-animate.js"></script>
+<script type="text/javascript" src="bower_components/angular-messages/angular-messages.js"></script>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBnKrQa4LsT9-6WEQrDcOJ8C_qsMlzmlcg",
+    authDomain: "angular-test-fce12.firebaseapp.com",
+    databaseURL: "https://angular-test-fce12.firebaseio.com",
+    projectId: "angular-test-fce12",
+    storageBucket: "angular-test-fce12.appspot.com",
+    messagingSenderId: "638760708553"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<!-- AngularFire -->
+<script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+
+<script type="text/javascript" src="./app.js"></script>
+</body>
+</html>
